@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Plans - Bluepeak Financial</title>
+  <meta name="description" content="Explore our professionally managed investment plans designed for every investor level—Basic, Standard, and Premium options.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .calculator-result {
+      background: linear-gradient(135deg, #e8f1f7, #f0f8ff);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #2c5aa0;
+    }
+    .calculator-result h4 {
+      color: #1e3a5f;
+      margin-bottom: 1rem;
+    }
+    .calculator-result p {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .calculator-result .highlight {
+      color: #27ae60;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="navbar">
+    <div class="navbar-brand">
+      Bluepeak Financial
+    </div>
+    <button class="mobile-toggle">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section style="background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%); color: white; padding: 4rem 2rem; text-align: center;">
+  <div class="container">
+    <h1 style="color: white; margin-bottom: 1rem;">Investment Plans</h1>
+    <p style="font-size: 1.1rem; opacity: 0.95;">Choose the plan that aligns with your financial goals and investment horizon</p>
+  </div>
+</section>
+
+<!-- Plans Comparison -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Investment Plans</h2>
+      <p>Each plan is designed with careful consideration for risk management, diversification, and achievable returns.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <h3 class="plan-name">Basic Plan</h3>
+        <div class="plan-price">From <span>$5,000</span></div>
+        <p class="plan-description">Perfect entry point for new investors seeking diversified exposure to global markets.</p>
+        
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Plan Features</h4>
+        <ul class="plan-features">
+          <li>Minimum Initial Investment: $5,000</li>
+          <li>Portfolio Allocation: 60% Stocks / 40% Bonds</li>
+          <li>Global Diversification across 25+ countries</li>
+          <li>Quarterly performance reports</li>
+          <li>Annual rebalancing</li>
+          <li>Basic risk management included</li>
+          <li>Email support (2-3 business days)</li>
+          <li>6-month minimum commitment</li>
+        </ul>
+
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Expected Returns</h4>
+        <p style="color: #333; margin-bottom: 1rem;">
+          <strong>Historical Average: 8-10% annually</strong> (past performance does not guarantee future results)
+        </p>
+        <p style="font-size: 0.85rem; color: #999;">
+          Subject to market conditions, portfolio composition, and global economic factors.
+        </p>
+
+        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">Choose Plan</a>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <h3 class="plan-name">Standard Plan</h3>
+        <div class="plan-price">From <span>$25,000</span></div>
+        <p class="plan-description">Optimized for balanced growth with enhanced support and customization options.</p>
+        
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Plan Features</h4>
+        <ul class="plan-features">
+          <li>Minimum Initial Investment: $25,000</li>
+          <li>Portfolio Allocation: 55% Stocks / 35% Bonds / 10% Alternatives</li>
+          <li>Global Diversification across 40+ countries</li>
+          <li>Monthly detailed performance reports</li>
+          <li>Bi-annual rebalancing</li>
+          <li>Advanced risk management protocols</li>
+          <li>Priority email & phone support</li>
+          <li>Flexible 3-month terms</li>
+        </ul>
+
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Expected Returns</h4>
+        <p style="color: #333; margin-bottom: 1rem;">
+          <strong>Historical Average: 11-13% annually</strong> (past performance does not guarantee future results)
+        </p>
+        <p style="font-size: 0.85rem; color: #999;">
+          Enhanced through optimized asset allocation and active management.
+        </p>
+
+        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Get Started</a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="plan-card">
+        <h3 class="plan-name">Premium Plan</h3>
+        <div class="plan-price">From <span>$100,000</span></div>
+        <p class="plan-description">Exclusive access with custom strategies tailored to individual investment objectives.</p>
+        
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Plan Features</h4>
+        <ul class="plan-features">
+          <li>Minimum Initial Investment: $100,000</li>
+          <li>Custom Portfolio Allocation (tailored to you)</li>
+          <li>Access to Global Markets across 50+ countries</li>
+          <li>Weekly performance updates & analytics</li>
+          <li>Monthly rebalancing & optimization</li>
+          <li>Institutional-grade risk management</li>
+          <li>24/7 dedicated account manager</li>
+          <li>Flexible terms & early withdrawal options</li>
+        </ul>
+
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: #1e3a5f;">Expected Returns</h4>
+        <p style="color: #333; margin-bottom: 1rem;">
+          <strong>Historical Average: 12-15% annually</strong> (past performance does not guarantee future results)
+        </p>
+        <p style="font-size: 0.85rem; color: #999;">
+          Premium returns through tailored strategies and advanced portfolio optimization.
+        </p>
+
+        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">Choose Plan</a>
+      </div>
+    </div>
+
+    <div style="background: #fff3cd; padding: 1.5rem; border-radius: 0.5rem; margin-top: 3rem; border-left: 4px solid #ffc107;">
+      <p style="color: #333; margin: 0;">
+        <strong>⚠️ Important Disclaimer:</strong> All investment returns mentioned above are based on historical averages and should not be construed as guarantees. Actual returns will vary based on market conditions, economic factors, and individual portfolio composition. Past performance does not guarantee future results. All investments carry risk, including possible loss of principal.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Investment Returns Calculator -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-title">
+      <h2>Investment Returns Calculator</h2>
+      <p>See estimated returns based on your investment amount and chosen plan.</p>
+    </div>
+
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div class="form-group">
+        <label for="investment-amount">Investment Amount (USD)</label>
+        <input type="number" id="investment-amount" placeholder="e.g., 50000" min="5000" step="1000">
+      </div>
+
+      <div class="form-group">
+        <label for="plan-select">Select Plan</label>
+        <select id="plan-select">
+          <option value="">Choose a plan...</option>
+          <option value="basic">Basic Plan ($5,000+)</option>
+          <option value="standard">Standard Plan ($25,000+)</option>
+          <option value="premium">Premium Plan ($100,000+)</option>
+        </select>
+      </div>
+
+      <div id="calculator-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Details -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Portfolio Diversification Strategy</h2>
+      <p>Our sophisticated approach to risk management through diversification.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h4>Asset Class Diversification</h4>
+        <p><strong>Equities (Stocks):</strong> 55-60%</p>
+        <ul class="plan-features" style="background: none; margin-top: 0.5rem;">
+          <li>25% Large-cap global leaders</li>
+          <li>20% Mid-cap growth companies</li>
+          <li>10-15% Emerging markets</li>
+        </ul>
+
+        <p style="margin-top: 1.5rem; margin-bottom: 0.5rem;"><strong>Fixed Income (Bonds):</strong> 35-40%</p>
+        <ul class="plan-features" style="background: none;">
+          <li>15% Government bonds (AAA-rated)</li>
+          <li>15% Investment-grade corporate bonds</li>
+          <li>5-10% High-yield bonds (diversified)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Geographic Diversification</h4>
+        <p>We spread investments across multiple regions to reduce geographic risk:</p>
+        <ul class="plan-features" style="background: none; margin-top: 1rem;">
+          <li>30% North America</li>
+          <li>28% Europe</li>
+          <li>20% Asia-Pacific</li>
+          <li>12% Emerging Markets</li>
+          <li>10% Other Regions</li>
+        </ul>
+
+        <p style="margin-top: 1.5rem; color: #999; font-size: 0.9rem;">
+          This diversification helps ensure that poor performance in one region is balanced by stability in others.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Risk Management Framework -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-title">
+      <h2 style="color: white;">Risk Management Framework</h2>
+      <p style="color: #b0c4de;">How we protect your capital while pursuing sustainable returns</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="card-icon" style="background: rgba(255,255,255,0.1); color: white;">📊</div>
+        <h4 style="color: white;">Portfolio Monitoring</h4>
+        <p style="color: #b0c4de;">
+          Real-time tracking of all holdings with daily analysis of market conditions and portfolio performance.
+        </p>
+      </div>
+
+      <div class="card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="card-icon" style="background: rgba(255,255,255,0.1); color: white;">🎯</div>
+        <h4 style="color: white;">Position Sizing</h4>
+        <p style="color: #b0c4de;">
+          Strict limits on individual positions prevent over-concentration and ensure balanced exposure.
+        </p>
+      </div>
+
+      <div class="card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="card-icon" style="background: rgba(255,255,255,0.1); color: white;">🔄</div>
+        <h4 style="color: white;">Rebalancing</h4>
+        <p style="color: #b0c4de;">
+          Periodic rebalancing maintains target allocations and locks in gains while limiting losses.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fee Structure -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Transparent Fee Structure</h2>
+      <p>No hidden fees, no surprises. You know exactly what you're paying for.</p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Management Fee</th>
+            <th>Performance Fee</th>
+            <th>Administration Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Basic</strong></td>
+            <td>1.25% annually</td>
+            <td>10% on returns above 8%</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td><strong>Standard</strong></td>
+            <td>0.95% annually</td>
+            <td>15% on returns above 12%</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td><strong>Premium</strong></td>
+            <td>0.75% annually</td>
+            <td>20% on returns above 15%</td>
+            <td>Included</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background: #f5f5f5; padding: 2rem; border-radius: 0.5rem; margin-top: 2rem;">
+        <h4 style="margin-bottom: 1rem;">What's Included</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e0e0e0;">✓ Professional portfolio management</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e0e0e0;">✓ Continuous rebalancing and monitoring</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e0e0e0;">✓ Performance reporting</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e0e0e0;">✓ Risk management</li>
+          <li style="padding: 0.5rem 0;">✓ Client support</li>
+        </ul>
+      </div>
+
+      <p style="margin-top: 1.5rem; color: #999; font-size: 0.9rem;">
+        No setup fees, no hidden charges, no surprise expenses. All fees are disclosed upfront and deducted from returns.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-light">
+  <div class="container text-center">
+    <h2>Ready to Invest?</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+      Start your investment journey today. Our team is ready to answer your questions and help you choose the perfect plan.
+    </p>
+    <div class="btn-group" style="justify-content: center;">
+      <a href="contact.html" class="btn btn-primary">Open an Account</a>
+      <a href="how-it-works.html" class="btn btn-secondary">See How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Bluepeak Financial</h4>
+      <p>Leading global investment firm committed to transparent, sustainable wealth growth for over 15 years.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Risk Disclaimer</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact & Social</h4>
+      <p>Email: <a href="mailto:bluepeakfinancial@gmail.com" style="color: #b0c4de;">bluepeakfinancial@gmail.com</a></p>
+      <p>Phone: +1 (547) 820-1994</p>
+      <p>Headquarters: New York, USA</p>
+      <p style="margin-top: 1rem;"><a class="social-link" href="https://www.instagram.com/hr_bluepeak_financial?igsh=dHZtcnczdm5lZWN0" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.365 2.15a.9.90 0 1 1 0 1.8.90.90 0 0 1 0-1.8ZM12 7.05a4.95 4.95 0 1 1 0 9.9 4.95 4.95 0 0 1 0-9.9Zm0 1.5a3.45 3.45 0 1 0 0 6.9 3.45 3.45 0 0 0 0-6.9Zm0 1.2a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Z"/></svg>Instagram</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span class="current-year">2024</span> Bluepeak Financial. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

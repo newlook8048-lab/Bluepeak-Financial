@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Bluepeak Financial</title>
+  <meta name="description" content="Bluepeak Financial member dashboard - Track your portfolio performance and manage your investments.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .chart-placeholder {
+      background: linear-gradient(135deg, rgba(44, 90, 160, 0.1), rgba(74, 144, 226, 0.1));
+      padding: 2rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+    }
+    .portfolio-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .portfolio-item:last-child {
+      border-bottom: none;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin: 0.5rem 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2c5aa0, #4a90e2);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="navbar">
+    <div class="navbar-brand">
+      Bluepeak Financial
+    </div>
+    <button class="mobile-toggle">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Dashboard Header -->
+<div style="background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%); color: white; padding: 2rem;">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2 style="color: white; margin-bottom: 0.5rem;">Welcome Back, James!</h2>
+        <p style="opacity: 0.95;">Here's an overview of your portfolio as of today</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 0.75rem 1.25rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.2); text-align: right;">
+        <p style="font-size: 0.85rem; opacity: 0.9; margin-bottom: 0.25rem; color: rgba(255,255,255,0.8);">Last Updated</p>
+        <p id="last-updated-time" style="font-size: 1rem; margin: 0; font-weight: 600; color: #ffffff;">Loading...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Key Metrics -->
+<section style="padding: 2rem; background-color: #f5f5f5;">
+  <div class="container">
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <div class="stat-label">Account Balance</div>
+        <div class="stat-value">$<span id="user-balance">25,438.50</span></div>
+        <div class="stat-change positive">↑ +$2,145.00 this month</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Total Invested</div>
+        <div class="stat-value">$<span id="invested-amount">15,000.00</span></div>
+        <div class="stat-change">From your deposits</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Returns Earned</div>
+        <div class="stat-value positive" style="color: #27ae60;">$<span id="returns-earned">10,438.50</span></div>
+        <div class="stat-change positive">+69.6% return on investment</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Active Investments</div>
+        <div class="stat-value"><span id="active-count">3</span></div>
+        <div class="stat-change">Across 4 asset classes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <!-- Portfolio Performance -->
+      <div class="card">
+        <h3>Portfolio Performance</h3>
+        <div class="chart-placeholder">
+          <img src="PC.png" alt="Portfolio Performance Chart (12-month view)" style="width: 100%; height: auto; border-radius: 0.5rem;">
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <p style="font-size: 0.9rem; color: #999; margin-bottom: 1rem;">
+            Your portfolio has grown <strong style="color: #27ae60;">+8.7%</strong> over the past 12 months, outperforming the market benchmark.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: space-around; font-size: 0.9rem;">
+            <div style="text-align: center;">
+              <p style="color: #999; margin-bottom: 0.3rem;">1M</p>
+              <p style="color: #2c5aa0; font-weight: 700;">+2.1%</p>
+            </div>
+            <div style="text-align: center;">
+              <p style="color: #999; margin-bottom: 0.3rem;">3M</p>
+              <p style="color: #2c5aa0; font-weight: 700;">+5.3%</p>
+            </div>
+            <div style="text-align: center;">
+              <p style="color: #999; margin-bottom: 0.3rem;">6M</p>
+              <p style="color: #2c5aa0; font-weight: 700;">+6.9%</p>
+            </div>
+            <div style="text-align: center;">
+              <p style="color: #999; margin-bottom: 0.3rem;">12M</p>
+              <p style="color: #27ae60; font-weight: 700;">+8.7%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asset Allocation -->
+      <div class="card">
+        <h3>Asset Allocation</h3>
+        <div class="chart-placeholder">
+          <img src="AA.png" alt="Asset Allocation Chart (Pie/Donut view)" style="width: 100%; height: auto; border-radius: 0.5rem;">
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <div class="portfolio-item">
+            <span>Equities (Stocks)</span>
+            <span style="font-weight: 700;">55%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 55%;"></div>
+          </div>
+
+          <div class="portfolio-item" style="margin-top: 1rem;">
+            <span>Bonds</span>
+            <span style="font-weight: 700;">35%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 35%;"></div>
+          </div>
+
+          <div class="portfolio-item" style="margin-top: 1rem;">
+            <span>Cash & Alternatives</span>
+            <span style="font-weight: 700;">10%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 10%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Holdings -->
+    <div class="card" style="margin-top: 2rem;">
+      <h3>Current Holdings</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Asset</th>
+              <th>Type</th>
+              <th>Position Size</th>
+              <th>Current Value</th>
+              <th>Gain/Loss</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vanguard S&P 500 ETF</strong></td>
+              <td>Equity</td>
+              <td>18.5%</td>
+              <td>$4,705.50</td>
+              <td><span style="color: #27ae60;">+$420.30</span></td>
+              <td><span class="status-badge status-active">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>iShares Global Tech ETF</strong></td>
+              <td>Equity</td>
+              <td>15.2%</td>
+              <td>$3,870.40</td>
+              <td><span style="color: #27ae60;">+$156.75</span></td>
+              <td><span class="status-badge status-active">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bloomberg Aggregate Bond ETF</strong></td>
+              <td>Fixed Income</td>
+              <td>22.1%</td>
+              <td>$5,632.05</td>
+              <td><span style="color: #27ae60;">+$243.15</span></td>
+              <td><span class="status-badge status-active">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>PIMCO Total Return Fund</strong></td>
+              <td>Fixed Income</td>
+              <td>14.3%</td>
+              <td>$3,641.95</td>
+              <td><span style="color: #e67e22;">+$89.50</span></td>
+              <td><span class="status-badge status-active">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>Emerging Markets Equity</strong></td>
+              <td>Equity</td>
+              <td>18.6%</td>
+              <td>$4,738.10</td>
+              <td><span style="color: #27ae60;">+$511.20</span></td>
+              <td><span class="status-badge status-active">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>Money Market Fund</strong></td>
+              <td>Cash</td>
+              <td>11.3%</td>
+              <td>$2,875.50</td>
+              <td><span style="color: #2c5aa0;">+$25.00</span></td>
+              <td><span class="status-badge status-completed">Liquid</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="card" style="margin-top: 2rem;">
+      <h3>Recent Transactions</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dec 15, 2024</td>
+              <td>Return</td>
+              <td>Monthly dividend distribution</td>
+              <td><span style="color: #27ae60;">+$425.50</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Dec 10, 2024</td>
+              <td>Rebalance</td>
+              <td>Quarterly portfolio rebalancing</td>
+              <td>—</td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Dec 5, 2024</td>
+              <td>Deposit</td>
+              <td>Additional investment deposit</td>
+              <td><span style="color: #2c5aa0;">+$5,000.00</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Nov 28, 2024</td>
+              <td>Return</td>
+              <td>Monthly dividend distribution</td>
+              <td><span style="color: #27ae60;">+$352.75</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Nov 15, 2024</td>
+              <td>Fee</td>
+              <td>Monthly management fee</td>
+              <td><span style="color: #e74c3c;">-$31.25</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="grid grid-2" style="margin-top: 2rem;">
+      <div class="card">
+        <h4>📊 Deposit Funds</h4>
+        <p>Add more capital to your investment account and grow your portfolio faster.</p>
+        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Add Funds</a>
+      </div>
+
+      <div class="card">
+        <h4>💰 Request Withdrawal</h4>
+        <p>Withdraw your profits or a portion of your investment with flexible options.</p>
+        <a href="#" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Withdraw</a>
+      </div>
+
+      <div class="card">
+        <h4>📄 Download Reports</h4>
+        <p>Access detailed monthly reports, tax documents, and comprehensive statements.</p>
+        <a href="#" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">View Reports</a>
+      </div>
+
+      <div class="card">
+        <h4>🤝 Contact Support</h4>
+        <p>Have questions? Our dedicated support team is here to help you.</p>
+        <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Get Help</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard Features -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-title">
+      <h2>Dashboard Features</h2>
+      <p>Complete control and transparency over your investments.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h4>Real-Time Updates</h4>
+        <p>Your portfolio updates in real-time as markets move. See your gains and losses as they happen throughout the trading day.</p>
+      </div>
+
+      <div class="card">
+        <h4>Detailed Analytics</h4>
+        <p>Advanced charts, performance metrics, and comparative analysis help you understand exactly how your portfolio is performing.</p>
+      </div>
+
+      <div class="card">
+        <h4>Transaction History</h4>
+        <p>Complete record of all deposits, withdrawals, trades, dividends, and fees going back to account inception.</p>
+      </div>
+
+      <div class="card">
+        <h4>Tax Documents</h4>
+        <p>Automatically generated 1099 forms and tax reports make filing taxes simple. Download anytime for your records.</p>
+      </div>
+
+      <div class="card">
+        <h4>Custom Alerts</h4>
+        <p>Set up notifications for significant portfolio movements, market opportunities, or rebalancing events.</p>
+      </div>
+
+      <div class="card">
+        <h4>Mobile Access</h4>
+        <p>Manage your portfolio on the go with our fully responsive dashboard. Check balances and make decisions from anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security Notice -->
+<section class="section">
+  <div class="container">
+    <div style="background: linear-gradient(135deg, #e8f1f7, #f0f8ff); padding: 2rem; border-radius: 0.5rem; border-left: 4px solid #2c5aa0;">
+      <h3 style="color: #1e3a5f; margin-bottom: 1rem;">🔒 Your Security is Our Priority</h3>
+      <p style="color: #333; margin-bottom: 0;">
+        Your dashboard is protected by bank-level security including 256-bit SSL encryption, two-factor authentication, biometric login options, and real-time fraud monitoring. All data is backed up multiple times across secure, geographically distributed servers. You can access your account with complete confidence that your information is safe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container text-center">
+    <h2>Ready to See Your Dashboard in Action?</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Open an account today and get instant access to our powerful, professional-grade investment dashboard.
+    </p>
+    <a href="contact.html" class="btn btn-white">Open an Account</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Bluepeak Financial</h4>
+      <p>Leading global investment firm committed to transparent, sustainable wealth growth for over 15 years.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Risk Disclaimer</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact & Social</h4>
+      <p>Email: <a href="mailto:bluepeakfinancial@gmail.com" style="color: #b0c4de;">bluepeakfinancial@gmail.com</a></p>
+      <p>Phone: +1 (547) 820-1994</p>
+      <p>Headquarters: New York, USA</p>
+      <p style="margin-top: 1rem;"><a class="social-link" href="https://www.instagram.com/hr_bluepeak_financial?igsh=dHZtcnczdm5lZWN0" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.365 2.15a.9.90 0 1 1 0 1.8.90.90 0 0 1 0-1.8ZM12 7.05a4.95 4.95 0 1 1 0 9.9 4.95 4.95 0 0 1 0-9.9Zm0 1.5a3.45 3.45 0 1 0 0 6.9 3.45 3.45 0 0 0 0-6.9Zm0 1.2a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Z"/></svg>Instagram</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span class="current-year">2024</span> Bluepeak Financial. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  function updateLastUpdatedTime() {
+    const now = new Date();
+    const options = { 
+      timeZone: 'America/New_York', 
+      hour12: true, 
+      hour: 'numeric', 
+      minute: '2-digit' 
+    };
+    const timeString = now.toLocaleString('en-US', options);
+    document.getElementById('last-updated-time').textContent = 'Today at ' + timeString + ' EST';
+  }
+
+  // Update on page load
+  updateLastUpdatedTime();
+
+  // Update every minute
+  setInterval(updateLastUpdatedTime, 60000);
+</script>
+</body>
+</html>
